@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Audio Transcription Webpage</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+
+</head>
+
+<body class="day-mode">
+    <div id="container">
+        <h1>Real-Time Audio Transcription Webpage</h1>
+        
+        <div id="sentMessagesContainer"></div> 
+        <div id="transcription-container">
+            <div id="transcription-text-wrapper">
+                <textarea id="transcription-text" placeholder="Transcription will appear here" readonly></textarea>
+                <div id="displayText"></div>
+            </div>
+        </div>
+        <div id="buttons-container">
+            <button id="toggleModeButton">Toggle Mode</button>
+            <button id="recordButton">Start Recording</button>
+            <button id="clearButton">Clear Text</button>
+            <button id="sendButton">Send</button>
+            <button id="clearAllButton">Clear All Messages</button>
+            
+        </div>
+        <p></p>
+        <div>
+            <button class="mic-toggle" id="mic">
+                <span class="material-icons">mic</span>
+            </button>
+            <audio class="playback" controls></audio>
+        </div>
+    </div>
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>
